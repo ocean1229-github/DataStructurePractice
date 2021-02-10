@@ -1,50 +1,71 @@
 ﻿#include<stdio.h>
-#include<stdlib.h>
-#include<malloc.h>
-#include<string.h>
+#include<malloc.h>//동적할당에 관한 헤더파일...
+//#include<stdlib.h>//malloc.h를 포함하고 있는 헤더파일..
+
+//프로그램 운용중에 메모리 구조...
+//1.Code영역
+// - 기계어로 번역된 코드가 저장되는 영역
+// - 함수가 정의된 영역
+//   ex) this , self...함수포인터
+//2.Data영역
+// - 정적데이터영역
+// - 전역변수 및 static변수가 저장되는 영역...
+// - 프로그램이 실행할때 공간이 만들어지고 프로그램이 끝날때 공간이 소멸한다...
+// - 우리가 직접 공간의 생성 및 소멸시기를 결정할수 없다...
+
+//3.Stack영역
+// - 지역변수 및 매개변수가 저장되는 영역....
+// - 함수의 실행 영역...함수의 호출 및 종료를 담당하고 있는 영역...
+// - 지역이 실행할때 공간이 만들어지고 지역이끝날때 공간이 소멸된다...
+// - 우리가 직접 공간의 생성 및 소멸시기를 결정할수 없다..
+
+//4.Heap영역
+// - 프로그램 운용중에 사용자 필요에 의해 공간을 생성하고 소멸시킬수 있는 영역
+// - 우리가 직접 공간의 생성 및 소멸시기를 결정할수 있다...
+// - 동적할당을 하는 영역...
+
+//동적할당
+// - 프로그램 운용중에 사용자 필요에 의해 공간을 생성하고 소멸시키는 작업...
+// - C표준 함수를 이용하여 동적할당을 한다...
+// - 동적할당된 공간을 제어하기위해서 포인터를 사용해야 한다....
+// - 동적할당공간은 반드시 사용후 해제 처리를 해주어야 한다...
 
 int main(void) {
-	//동적 할당 이용해서
-	int *num;
-	double *pi;
-	char *a;
-	char *str = NULL;
 
-	struct Profile {
-		char name[20];
-		int age;
-	};
+	//printf("%p\n", printf);
 
+	//동적할당 생성 함수 - malloc
+	// (포인터타입)malloc(sizeof(자료형) * 개수)
+	//					  할당받을 공간의 크기
+	int* pt = (int*)malloc(sizeof(int));
 
-	num = (int*)malloc(sizeof(int));
+	*pt = 30;
 
-	pi = (double*)malloc(sizeof(double));
+	printf("pt의 주소값 : %p\n", pt);
+	printf("pt가 가리키는 공간의 값 : % d\n", *pt);
 
-	a = (char*)malloc(sizeof(char));
+	//동적할당 해제함수
+	//free(해제할공간의주소값)
 
-	str = (char*)malloc(20);
-	strcpy(str, "안녕하세요");
+	free(pt);
 
-	struct Profile* S;
-	S = (struct Profile*)malloc(sizeof(struct Profile));
-	strcpy(S->name, "홍길동");
-	S->age = 20;
+	//void* pt = "asdfasdf";
 
-	*num = 5;
-	*pi = 3.14;
-	*a = 'A';
+	//*pt;
 
-	printf("%d\n", *num);
-	printf("%lf\n", *pi);
-	printf("%c\n", *a);
-	printf("%s\n", str);
-	printf("%s %d\n", S->name, S->age);
+	// * (간접 참조 연산자) - 주소값에 해당하는 공간을 참조하는 연산자.
+
+	//int a = 20;
+
+	//*(&a) = 30;
 
 
-	free(num);
-	free(pi);
-	free(a);
-	free(S);
+	//printf("%d\n", a);
+
+
+	//호출
 
 	return 0;
 }
+
+//선언 , 초기화 , 호출....다음주 월요일...포인터 설명
