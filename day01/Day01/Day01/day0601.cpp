@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 
 //대문자 개수 입력 : 100
 
@@ -46,14 +47,25 @@ void disp(char* pt, int su) {
 }
 
 void answer(char* pt, int su) {
-    int Alpa[26];
-    for (int j = 26, int i = 0; j <= 90; j++) {
-        Alpa[i] = j;                           
-        i++;                                   
+    int i, len;
+    int list[] = { 0 };
+    len = strlen(pt);
+    for (i = 0; i < len; i++)
+    {
+        if ((pt[i] >= 'A' && pt[i] <= 'Z'))
+        {
+            if (pt[i] <= 'Z')
+                list[pt[i] - 'A']++;
+        }
     }
-    for (int i = 0, int k = 0; i < su; i++) {          // 전체 검사 
-        k = pt[i];
-        Alpa[k] = +1
+
+    for (i = 0; i < 26; i++)
+    {
+        {
+            if (i % 4 == 0) printf("\n");
+            printf("%c : %02d개 ", 'A' + i, list[i]);
+
+        }
     }
 }
 
@@ -68,6 +80,8 @@ int main(void) {
     setData(pt, su);
 
     disp(pt, su);
+
+    answer(pt, su);
 
     free(pt);
 

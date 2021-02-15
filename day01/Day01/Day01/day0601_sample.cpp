@@ -27,25 +27,23 @@ int main()
     printf("\n");
 
     int i, len;
-    int a[max] = { 0 };
+    int list[max] = { 0 };
     len = strlen(str);
     for (i = 0; i < len; i++)
     {
         if ((str[i] >= 'A' && str[i] <= 'Z'))
         {
             if (str[i] <= 'Z')
-                a[str[i] - 'A']++;
+                list[str[i] - 'A']++;
         }
     }
 
     for (i = 0; i < 26; i++)
     {
         {
-            if (a[max])
-            {
-                if (i % 4 == 0) printf("\n");
-                printf("%c : %02d°³ ", 'A' + i, a[i]);
-            }
+            if (i % 4 == 0) printf("\n");
+            printf("%c : %02d°³ ", 'A' + i, list[i]);
+         
         }
     }
 
