@@ -74,7 +74,7 @@ void eaDisp(char* pt, int su) {
 }
 
 int main(void) {
-
+         
     int su = input();
 
     char* pt = (char*)malloc(su);

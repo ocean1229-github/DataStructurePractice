@@ -81,5 +81,32 @@
     <ClCompile Include="day0602.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="day0701Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="just.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0702Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0703Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0704Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0705Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0706.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0707.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0708.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
