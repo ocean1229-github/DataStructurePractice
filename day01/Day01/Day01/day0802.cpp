@@ -11,7 +11,7 @@ int madeRoom(const char* msg) {
     int nullRoom;
     printf("%s : ", msg);
     scanf("%d", &nullRoom);
-
+                                            //TODO 방관리 프로그램 만들기
     return nullRoom;
 }
 
