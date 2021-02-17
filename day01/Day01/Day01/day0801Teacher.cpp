@@ -6,11 +6,12 @@ typedef struct Student {
     int kor, eng, math, tot, rank;
 }ST;
 
-int input(const char* msg); //정수를 입력받는 함수
-void setData(ST* pt, int su);
+int input(const char* msg); //정수를 입력받는 함수  
+void setData(ST* pt, int su);   
 void setRank(ST* pt, int su);
 
-int input(const char* msg) {
+
+int input(const char* msg) {        ///이런식으로 모든 함수를 받을 수 있다.
     int su;
     printf("%s : ", msg);
     scanf_s("%d", &su);
