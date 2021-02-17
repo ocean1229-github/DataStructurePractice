@@ -108,5 +108,11 @@
     <ClCompile Include="day0708.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="day0801Teacher.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day0802.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
