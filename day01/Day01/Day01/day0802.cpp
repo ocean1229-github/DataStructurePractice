@@ -1,67 +1,58 @@
 #include<stdio.h>
-
-typedef struct WelcomeHotel {
-    int roomSu, roomNumber, hotel[5];
-}WH;
-
-void made_room(void) {
-    for (int i = 0; i < 5; i++)
-    {
-
-    }
-}
-
-void in_room() {
-
-}
-
-void out_room() {
-    
-}
-
-void see_room() {
-
-}
-
-int input(const char* msg) {
-    int roomSu;
-    printf("%s : ", msg);
-    scanf_s("%d", &roomSu);
-
-    return roomSu; 
-}
-
-void select(){
-    int menu_select;
-    menu_select = input("1.입실 2.퇴실 3.보기 4.종료 : ");
-    scanf_s("%d", &menu_select);
-
-    return menu_select;
-}
+#include<malloc.h>
 
 int main(void) {
 
-    printf("방 관리 프로그램\n");
+    int house[5] = { NULL };
 
     while (1) {
-        printf("\n방의 갯수는 : %d\n",roomSu);
+        int menu_select;
+        printf("방의 갯수는 : 5\n1.입실 2.퇴실 3.보기 4.종료 : ");
+        scanf_s("%d", &menu_select);
 
-        select();
-
+        printf("방 관리 프로그램\n");
+    
         switch (menu_select) {
         case '1':
-            in_room();
+            int inNumber;
+            printf("입실하실 방의 번호는 : ");
+            scanf_s("%d", &inNumber);
+
+            if (house[inNumber] == NULL) {
+                printf("%d호실에 입실하셨습니다", inNumber+1);
+            }
+            else {
+                printf("현재 사용중인 방입니다.");
+            }
             break;
 
         case '2':
-            out_room();
+            int outNumber;
+            printf("퇴실하실 방의 번호는 : ");
+            scanf_s("%d", &outNumber);
+
+            if (house[outNumber] == NULL) {
+                printf("빈방입니다");
+            }
+            else {
+                printf("%d호실에서 퇴실하셨습니다.", outNumber);
+            }
             break;
 
         case '3':
-            see_room(); 
+            for (int i = 0; i < 5; i++) {
+                printf("%d호실 - ", i + 1);
+                if (house[i] == !NULL) {
+                    printf("입실\n");
+                }
+                else {
+                    printf("빈방\n");
+                }
+            }
             break;
 
         case '4':
+            printf("프로그램을 종료합니다.");
             return 0;
 
         default:
