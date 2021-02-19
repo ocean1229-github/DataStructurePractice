@@ -6,9 +6,9 @@ int main(void) {
     int house[5] = { NULL };
 
     while (1) {
-        int menu_select;
+        char menu_select;
         printf("방의 갯수는 : 5\n1.입실 2.퇴실 3.보기 4.종료 : ");
-        scanf_s("%d", &menu_select);
+        scanf_s("%c", &menu_select);
 
         printf("방 관리 프로그램\n");
     
@@ -19,10 +19,11 @@ int main(void) {
             scanf_s("%d", &inNumber);
 
             if (house[inNumber] == NULL) {
-                printf("%d호실에 입실하셨습니다", inNumber+1);
+                printf("%d호실에 입실하셨습니다\n", inNumber);    
+                return house[inNumber] = 1;
             }
             else {
-                printf("현재 사용중인 방입니다.");
+                printf("현재 사용중인 방입니다.\n");
             }
             break;
 
@@ -32,10 +33,10 @@ int main(void) {
             scanf_s("%d", &outNumber);
 
             if (house[outNumber] == NULL) {
-                printf("빈방입니다");
+                printf("빈방입니다\n");
             }
             else {
-                printf("%d호실에서 퇴실하셨습니다.", outNumber);
+                printf("%d호실에서 퇴실하셨습니다.\n", outNumber);
             }
             break;
 
@@ -52,7 +53,7 @@ int main(void) {
             break;
 
         case '4':
-            printf("프로그램을 종료합니다.");
+            printf("프로그램을 종료합니다.\n");
             return 0;
 
         default:
