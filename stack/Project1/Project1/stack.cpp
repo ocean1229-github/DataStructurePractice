@@ -4,13 +4,12 @@
 
 void push(int* stack, int* top, int data);
 void pop(int* stack, int* top);
-void peek(int* stack, int* top);
+void peek(int* stack, int* top);    //가장 나중에 들어온 데이터를 출력하는 함수
 
 int main(void)
-{
+{   
     int* stack = (int*)malloc(sizeof(int) * SIZE);
     int top = 0;
-
     push(stack, &top, 10);
     push(stack, &top, 20);
     push(stack, &top, 30);
@@ -19,10 +18,15 @@ int main(void)
     push(stack, &top, 60);
     peek(stack, &top);
     pop(stack, &top);
+    peek(stack, &top);
     pop(stack, &top);
+    peek(stack, &top);
     pop(stack, &top);
+    peek(stack, &top);
     pop(stack, &top);
+    peek(stack, &top);
     pop(stack, &top);
+    peek(stack, &top);
     pop(stack, &top);
     peek(stack, &top);
 
