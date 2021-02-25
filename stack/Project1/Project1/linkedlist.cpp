@@ -18,15 +18,14 @@ int main(void)
 { 
     Stack* top = NULL;
     push(&top, 10);
-    peek(&top);
     push(&top, 20);
-    peek(&top);
     push(&top, 30);
     Allpeek(&top);
     pop(&top);
     pop(&top);
     pop(&top);
-    pop(&top); 
+    pop(&top);
+    Allpeek(&top);
     return 0; 
 }
 
@@ -60,7 +59,13 @@ void push(Stack** top, int data)
 
 void pop(Stack** top)
 {
-
+    Stack* tmp = NULL;
+    int data;                                                                     
+    tmp = *top;
+    *top = tmp->link;//>>?? 모르겠따
+    data = tmp->data;
+    free(tmp);
+    return;
 }
 
 void peek(Stack** top)
