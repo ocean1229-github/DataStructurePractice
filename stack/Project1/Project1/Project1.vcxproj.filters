@@ -24,5 +24,14 @@
     <ClCompile Include="cs50.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="realLinkedlist.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="queue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue02.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
