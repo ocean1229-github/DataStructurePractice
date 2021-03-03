@@ -4,7 +4,7 @@
 //구조체 형성
 struct node
 {
-    int data, tmp;
+    int data;
     struct node* link;
 };
 typedef struct node Queue;
@@ -46,39 +46,34 @@ Queue* getNode()
 }
 
 void enqueue(Queue** front, Queue** rear, int data)
-//**front : 큐의 맨 앞쪽, rear : 큐의 맨 뒤쪽, data : 숫자데이터
 {
-    Queue* tmp;                 // 구조 저장할 임시변수 선언
-    tmp = getNode();            
-    tmp->data = data;           // 입력받은 숫자 데이터를 tmp가 가르키는 data영역에 저장한다 
-    printf("data : %d\n", tmp);
-    //처음        노드 한개 보냈잖아 node끼리 연결시키고 rear를 바꾼다
-    if ((*front) == 0) {    
+    Queue* tmp = getNode();
+    tmp->data = data;
+    if (!*front) {
         *front = *rear = tmp;
     }
     else {
         *rear = (*rear)->link = tmp;
     }
-    //두번째..
 }
 
 void dequeue(Queue** front, Queue** rear)
 {
-    if ((*front) == NULL) {
-        printf("No Data");
-        return;
+    if (!*front) {
+        printf("No Data!!!\n");
     }
-    else if ((*front)->link == NULL) {
-        Queue* tmp = *front;
-        *front = *rear = NULL;
-        free(tmp);
-        return;
-    }
-    else if ((*front)->link != NULL) {
+    else if ((*front)->link) {
         Queue* tmp = *front;
         *front = (*front)->link;
         free(tmp);
-        return;
+    }
+    else {
+        free(*front);
+        *front = *rear = NULL;
+        //Queue* tmp = *front;
+        //*front = (*front)->link;
+        //free(tmp);
+        //*rear = NULL;
     }
 }
 

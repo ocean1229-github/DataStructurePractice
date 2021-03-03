@@ -33,5 +33,11 @@
     <ClCompile Include="Queue02.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Queue03.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedListPractice.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
