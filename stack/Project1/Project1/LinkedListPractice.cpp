@@ -40,6 +40,7 @@ Node* getNode()
 	tmp->next = NULL;
 	return tmp;
 }
+
 void insertNode(Node** head, int data)
 {
 	if (!*head) {
@@ -59,22 +60,36 @@ void seletedeleteNode(Node** head, int data)
 {
 
 }
+
 void addNode(Node** head, int data, int adddata)
 {
 
 }
+
 Node* getSearchNode(Node** head, int data)
 {
+	Node* tmp = *head;
+	while (tmp) {
+		if (tmp->data) {
+			printf("Data 존재!!");
+		}
+	}
 	return 0;
 }
+
 void print(Node** head)
 {
-	if (*head == NULL) {
-		printf("출력완료\n");
-		return;
+	Node* tmp = *head;
+	while (tmp) {
+		if (tmp->next) {
+			printf("%d -> ", tmp->data);
+		}
+		else {
+			printf("%d")
+		}
 	}
-	while()
 }
+
 void AllDeleteNode(Node** head)
 {
 
