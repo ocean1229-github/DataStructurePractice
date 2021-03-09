@@ -1,6 +1,12 @@
 #include<stdio.h>
 #include<malloc.h>
 
+//트리
+
+//트리에도 여러가지 우회가 있다
+
+//우회에 대한 설명이 ppt에 있으니까 추가로 공부하고 썜한테 질문하자
+
 typedef struct node
 {
     int data;
