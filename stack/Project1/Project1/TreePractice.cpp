@@ -1,11 +1,11 @@
-#include<stdio.h>
-#include<malloc.h>
+//#include<stdio.h>
+//#include<malloc.h>
 
-typedef struct treeNode {
-	char data;
-	struct treeNode* left;
-	struct treeNode* right;
-} treeNode;
+//typedef struct treeNode {
+//	char data;
+//	struct treeNode* left;
+//	struct treeNode* right;
+//} treeNode;
 
 // 이진 트리의 순회 
 // 계층적 구조로 저장되어있는 트리의 모든 노드를 방문하여 데이터를 처리하는 연산
